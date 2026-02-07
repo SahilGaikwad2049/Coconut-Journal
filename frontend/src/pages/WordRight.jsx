@@ -86,7 +86,8 @@ export function WordRight({ guess, setGuess, stat, setStat, curRow, setCurRow })
         setCurGuess("");
     }
 
-    function resetGame() {
+    function resetGame(e) {
+        if(e) {e.stopPropagation();}
         const newArr = [...words].sort(() => Math.random()-0.5);
         setSoln(newArr[Math.floor(Math.random() * newArr.length)]);
         setGuess(Array(totalGuess).fill(""));
@@ -141,7 +142,7 @@ export function WordRight({ guess, setGuess, stat, setStat, curRow, setCurRow })
             <div className="pr ko">
                 <div className="line"></div>
             </div>
-            <div className="imptext">
+            <div className="imptext" onClick={e => e.stopPropagation()}>
                 {over && (
                     <div className="lol">
                         <div className="game-over">
@@ -153,6 +154,7 @@ export function WordRight({ guess, setGuess, stat, setStat, curRow, setCurRow })
                             <button 
                                 className="reset-btn2" 
                                 onClick={(e) => {
+                                    e.stopPropagation();
                                     resetGame();
                                     e.target.blur();
                                 }}
@@ -164,7 +166,7 @@ export function WordRight({ guess, setGuess, stat, setStat, curRow, setCurRow })
                 )}
             </div>
             <div>
-                {!over && <div className="dwg">
+                {!over && <div className="dwg" onClick={e => e.stopPropagation()}>
                     <div></div>
                     <button 
                             className="reset-btn" 
