@@ -10,6 +10,7 @@
   place-items: center;
   background-color: black;
   position: relative;
+  overflow: hidden;
 }
 
 .sta {
@@ -17,12 +18,20 @@
   justify-content: center;
   gap: 20px;
   font-size: 19px;
-  /* padding-top: 10px; */
 }
 
 .coverimg{
   max-width: 60%;
   max-height: 200%;
+  object-fit: cover;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
 }
 
 .nice {
@@ -59,7 +68,7 @@
 
 .book {
   width: 1250px;
-  height: 850px;
+  height: 835px;
   display: flex;              
   background: #b2ac88;
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
@@ -85,7 +94,6 @@
 
 .content {
   padding: 1.3rem 1rem;
-  /* font-family: Georgia, serif; */
   color: #2e2a26;
 }
 
@@ -231,7 +239,7 @@
   transition: all 0.2s ease;
   text-transform: uppercase;
   letter-spacing: 1px;
-  margin-bottom: 2px;
+  margin-bottom: 40px;
 }
 
 .reset-btn2 {
@@ -252,7 +260,6 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  gap: px;
 }
 
 .dwg {
